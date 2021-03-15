@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "28708343760",
+    "project_id": "talkie-83298",
+    "storage_bucket": "talkie-83298.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28708343760:android:8d3c8013992f42744533d5",
+        "android_client_info": {
+          "package_name": "com.kotlinmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28708343760-i6ujp0klm5ebcmdmbooivlpauu4rpjuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2U5N0XzaS5X1EhbD645xEmj9tlHtHwHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28708343760-i6ujp0klm5ebcmdmbooivlpauu4rpjuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
