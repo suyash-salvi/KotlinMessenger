@@ -4,16 +4,17 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import androidx.multidex.MultiDex
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
+import com.kotlinmessenger.messages.LatestMessagesActivity
+import com.kotlinmessenger.models.User
+import com.kotlinmessenger.registerLogin.LoginActivity
 //for using objects from activity_main
 import kotlinx.android.synthetic.main.register_main.*
 import java.util.*
@@ -23,6 +24,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         //starts with main page
         setContentView(R.layout.register_main)
@@ -41,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
             //send a log message
             Log.d("MainActivity","Try to show login activity")
             //address the redirect page
-            val intent= Intent(this,LoginActivity::class.java)
+            val intent= Intent(this, LoginActivity::class.java)
             //start the redirected page
             startActivity(intent)
 
@@ -101,25 +103,27 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this,"Please enter the required details",Toast.LENGTH_SHORT).show()
             //return
         }
+        else {//Execute only if it's not null
 
 
-        //firebase authentication of a user with an email and password
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
-                //to be notified of completion
-            .addOnCompleteListener{
+            //firebase authentication of a user with an email and password
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                    //to be notified of completion
+                    .addOnCompleteListener {
 
-                if(!it.isSuccessful) return@addOnCompleteListener
+                        if (!it.isSuccessful) return@addOnCompleteListener
 
-                //else if successful
-                Log.d("RegisterActivity","uid:${it.result?.user?.uid}")
-                uploadImageToFirebaseStorage()
+                        //else if successful
+                        Log.d("RegisterActivity", "uid:${it.result?.user?.uid}")
+                        uploadImageToFirebaseStorage()
 
-            }
-                //if failed
-            .addOnFailureListener{
-                Log.d("Main","Failed to create user: ${it.message}")
-                Toast.makeText(this,"Failed to create user:\n ${it.message}",Toast.LENGTH_SHORT).show()
-            }
+                    }
+                    //if failed
+                    .addOnFailureListener {
+                        Log.d("Main", "Failed to create user: ${it.message}")
+                        Toast.makeText(this, "Failed to create user:\n ${it.message}", Toast.LENGTH_SHORT).show()
+                    }
+        }
 
     }
     //upload image to firebase
@@ -157,12 +161,12 @@ class RegisterActivity : AppCompatActivity() {
         Log.d("RegisterActivity","You've reached the saveUserToFirebase fn")
         val uid=FirebaseAuth.getInstance().uid?:""//getting the uid if not null from Auth
         val ref=FirebaseDatabase.getInstance().getReference("/users/$uid")//get users uid
-        val user=User(uid,edit_text_Username.text.toString(),profileImageUrl)//create a variable user
+        val user= User(uid,edit_text_Username.text.toString(),profileImageUrl)//create a variable user
         ref.setValue(user)//
                 .addOnSuccessListener {
                     //If success
                     Log.d("RegisterActivity","Finally we save the user to db")
-                    val intent=Intent(this,LatestMessagesActivity::class.java)
+                    val intent=Intent(this, LatestMessagesActivity::class.java)
                     intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                    
@@ -181,4 +185,3 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
-class User(val uid:String, val username:String,val profileImageUrl:String)

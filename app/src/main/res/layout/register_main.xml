@@ -8,6 +8,7 @@
     tools:context=".RegisterActivity">
 
     <EditText
+        android:drawableStart="@drawable/ic_baseline_person_24"
         android:id="@+id/edit_text_Username"
         android:layout_width="0dp"
         android:layout_height="50sp"
@@ -25,12 +26,15 @@
         android:textColorHint="@android:color/tertiary_text_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableLeft="@drawable/ic_baseline_person_24" />
 
     <EditText
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:id="@+id/edit_text_EmailAddress"
         android:layout_width="0dp"
         android:layout_height="50sp"
+
 
         android:layout_marginTop="8dp"
         android:background="@drawable/rounded_edittext_register_login"
@@ -42,9 +46,11 @@
         android:paddingLeft="16sp"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_Username"
         app:layout_constraintStart_toStartOf="@+id/edit_text_Username"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_Username" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_Username"
+        android:drawableLeft="@drawable/ic_baseline_email_24" />
 
     <EditText
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:id="@+id/edit_text_Password"
         android:layout_width="0dp"
         android:layout_height="50sp"
@@ -59,7 +65,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_EmailAddress"
         app:layout_constraintStart_toStartOf="@+id/edit_text_EmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_EmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_EmailAddress"
+        android:drawableLeft="@drawable/ic_baseline_lock_24" />
 
     <Button
         android:id="@+id/register_button_register"
@@ -69,6 +76,7 @@
         android:text="Register"
         android:background="@drawable/roundedbutton"
         android:textSize="17sp"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
         app:backgroundTint="@color/Light_Sky"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_Password"
