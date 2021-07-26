@@ -12,5 +12,6 @@
         <!-- Status bar color. -->
 
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/aldrich</item>
     </style>
 </resources>

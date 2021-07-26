@@ -14,8 +14,10 @@
 
         <activity android:name=".models.SplashScreenActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <!--the application can start from here-->
+                <action android:name="android.intent.action.MAIN"/>
 
+                <!--This activity has the launching props-->
             <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -52,9 +54,10 @@
             android:name=".messages.LatestMessagesActivity"
             android:theme="@style/MyMenuTheme">
             <intent-filter>
+                <!--This is where the app can be started from-->
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity> <!-- Latest Messages Activity -->
 
@@ -62,13 +65,21 @@
 
         <activity android:name=".RegisterActivity">
             <intent-filter>
+                <!--This is where the app can be started from-->
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- we don't need a launcher cause the splash screen will be launched first-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
+
         </activity> <!-- Register Activity -->
 
-        <activity android:name=".registerLogin.LoginActivity"></activity>
+        <activity android:name=".registerLogin.LoginActivity">
+
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

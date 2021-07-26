@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.multidex.MultiDex
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -28,19 +29,17 @@ class NewMessageActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Select User"
 
-        recyclerview_newmessage.layoutManager=LinearLayoutManager(this@NewMessageActivity,LinearLayoutManager.VERTICAL,false)
+        recyclerview_newmessage.layoutManager =
+            LinearLayoutManager(this@NewMessageActivity, LinearLayoutManager.VERTICAL, false)
 
-
+        //fetching users
         fetchUsers()
-
-
-
 
 
     }
 
-    companion object{
-        val USER_KEY="USER_KEY"
+    companion object {
+        val USER_KEY = "USER_KEY"
     }
 
 
@@ -48,55 +47,56 @@ class NewMessageActivity : AppCompatActivity() {
         //get reference of users
         val ref = FirebaseDatabase.getInstance().getReference("/users")
 
-        ref.addListenerForSingleValueEvent(object : ValueEventListener {
-            @Override
-            override fun onDataChange(p0: DataSnapshot) {
-                val adapter = GroupAdapter<GroupieViewHolder>()
-                p0.children.forEach {
-                    Log.d("NewMessage", it.toString())
-                    val user = it.getValue(User::class.java)
 
-                    if (user != null) {
-                        //Add users to the list
-                        adapter.add(UserItem(user))
-                    }
-                    adapter.setOnItemClickListener { item, view ->
-                        //casting user item into an object
-                        val userItem= item as UserItem
+            ref.addListenerForSingleValueEvent(object : ValueEventListener {
+                @Override
+                override fun onDataChange(p0: DataSnapshot) {
+                    val adapter = GroupAdapter<GroupieViewHolder>()
+                    p0.children.forEach {
+                        Log.d("NewMessage", it.toString())
+                        val user = it.getValue(User::class.java)
 
-                        //open a new activity with a chatlog of the selected user
-                        val intent = Intent(view.context, ChatLogActivity::class.java)
+                        if (user != null) {
+                            //Add users to the list
+                            adapter.add(UserItem(user))
+                        }
+                        adapter.setOnItemClickListener { item, view ->
+                            //casting user item into an object
+                            val userItem = item as UserItem
 
-                        //used for getting the user outside of an item
-                        //intent.putExtra(USER_KEY,userItem.user.username)
-                        intent.putExtra(USER_KEY,userItem.user)
+                            //open a new activity with a chatlog of the selected user
+                            val intent = Intent(view.context, ChatLogActivity::class.java)
+
+                            //used for getting the user outside of an item
+                            //intent.putExtra(USER_KEY,userItem.user.username)
+                            intent.putExtra(USER_KEY, userItem.user)
 
 
+                            //startactivity
+                            startActivity(intent)
 
-
-                        //startactivity
-                       startActivity(intent)
-
-                        //finish the newmessage activity so that pressing back brings you chat
+                            //finish the newmessage activity so that pressing back brings you chat
 /*
                         finish()
 */
+                        }
+                        recyclerview_newmessage.adapter = adapter
+
                     }
-                    recyclerview_newmessage.adapter = adapter
+                }
+
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.d("NewMessage", "You have reached to snapshot")
 
                 }
-            }
+            })
 
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.d("NewMessage", "You have reached to snapshot")
-
-            }
-        })
+        }
 
     }
 
-}
+
 
     class UserItem(val user:User):Item<GroupieViewHolder>(){
         //we can access particular UI component

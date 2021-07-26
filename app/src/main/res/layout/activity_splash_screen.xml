@@ -15,16 +15,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@raw/splashimage" />
+        android:background="@mipmap/ic_launcher_foreground"
+        />
 
     <TextView
+
         android:id="@+id/splashScreen_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/aldrich"
         android:text="Talkie 1.0.0"
-        android:textStyle="bold"
         android:textColor="@android:color/darker_gray"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
