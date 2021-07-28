@@ -10,22 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinMessenger">
-
-
+        <activity android:name=".feeds.FeedActivity"></activity>
         <activity android:name=".models.SplashScreenActivity">
             <intent-filter>
-                <!--the application can start from here-->
-                <action android:name="android.intent.action.MAIN"/>
 
-                <!--This activity has the launching props-->
-            <category android:name="android.intent.category.LAUNCHER" />
+                <!-- the application can start from here -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- This activity has the launching props -->
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-
-
-
         <activity
             android:name=".messages.ChatLogActivity"
             android:theme="@style/ChatbarTheme">
@@ -35,10 +30,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".messages.LatestMessagesActivity" />
         </activity> <!-- Chat Log Activity -->
-
-
-
-
         <activity
             android:name=".NewMessageActivity"
             android:theme="@style/MyMenuTheme">
@@ -48,35 +39,29 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".messages.LatestMessagesActivity" />
         </activity> <!-- New Messages Activity -->
-
-
         <activity
             android:name=".messages.LatestMessagesActivity"
             android:theme="@style/MyMenuTheme">
             <intent-filter>
-                <!--This is where the app can be started from-->
+
+                <!-- This is where the app can be started from -->
                 <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
         </activity> <!-- Latest Messages Activity -->
-
-
-
         <activity android:name=".RegisterActivity">
             <intent-filter>
-                <!--This is where the app can be started from-->
+
+                <!-- This is where the app can be started from -->
                 <action android:name="android.intent.action.MAIN" />
 
-                <!-- we don't need a launcher cause the splash screen will be launched first-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!-- we don't need a launcher cause the splash screen will be launched first -->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
-
         </activity> <!-- Register Activity -->
+        <activity android:name=".registerLogin.LoginActivity" />
 
-        <activity android:name=".registerLogin.LoginActivity">
-
-        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

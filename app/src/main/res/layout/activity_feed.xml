@@ -4,39 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".messages.LatestMessagesActivity"
-    android:theme="@style/MyMenuTheme">
+    tools:context=".feeds.FeedActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_latest_messages_activity"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_new_message"
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
         android:clickable="true"
-        app:backgroundTint="@color/Dark_Sky"
-        app:fabCustomSize="60dp"
-        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"
-        app:rippleColor="@android:color/holo_blue_bright"
-        app:srcCompat="@drawable/ic_baseline_add_24"
-        android:contentDescription="New Message"
-        app:tint="@android:color/white" />
+        app:srcCompat="@drawable/ic_baseline_favorite_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
