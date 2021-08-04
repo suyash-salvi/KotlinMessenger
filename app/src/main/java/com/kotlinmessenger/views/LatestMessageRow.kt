@@ -53,6 +53,7 @@ class LatestMessageRow(val chatMessage: ChatMessage): Item<GroupieViewHolder>(){
     }
     //reference to the layout
     override fun getLayout(): Int {
+        //use latest message layout
         return R.layout.latest_message_row
     }
 

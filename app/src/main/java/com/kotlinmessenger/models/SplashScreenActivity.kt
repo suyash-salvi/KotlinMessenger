@@ -9,6 +9,7 @@ import android.os.Bundle
 import com.kotlinmessenger.NewMessageActivity
 import com.kotlinmessenger.R
 import com.kotlinmessenger.RegisterActivity
+import com.kotlinmessenger.feeds.FeedActivity
 import com.kotlinmessenger.messages.LatestMessagesActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_splash_screen.*
@@ -25,7 +26,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
 
         splashScreen_Image.animate().setDuration(1500).alpha(1f).withEndAction {
-            val intent = Intent(this, LatestMessagesActivity::class.java)
+            val intent = Intent(this, FeedActivity::class.java)
             startActivity(intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()

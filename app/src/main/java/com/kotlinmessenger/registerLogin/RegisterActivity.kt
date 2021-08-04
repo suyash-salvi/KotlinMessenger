@@ -14,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.kotlinmessenger.feeds.FeedActivity
 import com.kotlinmessenger.messages.LatestMessagesActivity
 import com.kotlinmessenger.models.User
 import com.kotlinmessenger.registerLogin.LoginActivity
@@ -206,7 +207,7 @@ class RegisterActivity : AppCompatActivity() {
                    /* cancelProgressBar()*/
 
                     Log.d("RegisterActivity", "Finally we save the user to db")
-                    val intent = Intent(this, LatestMessagesActivity::class.java)
+                    val intent = Intent(this, FeedActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
 
                     startActivity(intent)
