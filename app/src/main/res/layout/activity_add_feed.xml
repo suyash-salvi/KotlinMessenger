@@ -11,12 +11,12 @@
         android:id="@+id/textView_your_thoughts_here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="3dp"
-        android:text="Your thoughts here..."
-        android:textStyle="bold"
+        android:layout_marginTop="18dp"
+        android:padding="4dp"
+        android:text="Your thoughts!"
         android:textColor="#4CAF50"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,43 +29,71 @@
         android:background="@drawable/roundedbutton"
         android:padding="3dp"
         android:text="Post"
+
         app:layout_constraintEnd_toEndOf="@+id/editText_add_feed"
         app:layout_constraintStart_toStartOf="@+id/editText_add_feed"
         app:layout_constraintTop_toBottomOf="@+id/editText_add_feed" />
 
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText_add_feed"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#F5F5F5"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Type your text here..."
+        android:inputType="textMultiLine"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="420"
+        app:errorEnabled="true"
 
+        app:layout_constraintBottom_toTopOf="@+id/button_add_feed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_your_thoughts_here"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_add_feed"
-            android:layout_width="0dp"
-            android:layout_height="400dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
-            android:background="#F5F5F5"
-            android:ems="10"
-            app:errorEnabled="true"
-            app:counterEnabled="true"
-            app:counterMaxLength="420"
-            android:gravity="start|top"
-            android:hint="Type your text here..."
-            android:inputType="textMultiLine"
-            android:paddingLeft="2dp"
-            android:paddingRight="2dp"
+    <TextView
+        android:id="@+id/textView_charCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="250"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/editText_add_feed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.374"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_your_thoughts_here"
+        app:layout_constraintVertical_bias="0.0" />
 
-            app:layout_constraintBottom_toTopOf="@+id/button_add_feed"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_your_thoughts_here"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    
-
-
-
+    <TextView
+        android:id="@+id/textView_charsleft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="9dp"
+        android:text="Characters Left:"
+        app:layout_constraintBottom_toTopOf="@+id/editText_add_feed"
+        app:layout_constraintEnd_toStartOf="@+id/textView_charCount"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
