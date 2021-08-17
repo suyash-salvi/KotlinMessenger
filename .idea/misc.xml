@@ -3,11 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.15185185185185185" />
         <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/drawable/recyclerview_background.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_add_feed.xml" value="0.4" />
         <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_chat_log.xml" value="0.13451086956521738" />
-        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/feed_post_row.xml" value="0.536" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_latest_messages.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_login.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_new_message.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/activity_splash_screen.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/chat_from_row.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/chat_to_row.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/dialog_custom_progress.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/feed_post_row.xml" value="0.4" />
         <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/latest_message_row.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/Suyash/AndroidStudioProjects/KotlinMessenger/app/src/main/res/layout/register_main.xml" value="0.22083333333333333" />
       </map>

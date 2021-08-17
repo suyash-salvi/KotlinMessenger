@@ -9,7 +9,16 @@ import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import com.kotlinmessenger.R
+import com.kotlinmessenger.models.Post
+import com.kotlinmessenger.models.User
+import com.xwray.groupie.GroupieViewHolder
+import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_add_feed.*
 import org.w3c.dom.Text
 
@@ -45,5 +54,37 @@ class AddFeedActivity : AppCompatActivity() {
         }
 
     })
+        button_add_feed.setOnClickListener {
+            postTheThoughtsFunction()
+        }
+
+    }
+
+    private fun postTheThoughtsFunction() {
+        //convert the thoughts to string
+        val postText:String=editText_add_feed.toString()
+        val postCreatorUID= FirebaseAuth.getInstance().uid
+        val ref= FirebaseDatabase.getInstance().getReference("/allposts")
+        ref.addChildEventListener(object: ChildEventListener{
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+                val post=snapshot.getValue(Post::class.java)
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 }

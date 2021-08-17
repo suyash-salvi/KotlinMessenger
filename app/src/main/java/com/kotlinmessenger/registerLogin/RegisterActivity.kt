@@ -1,7 +1,6 @@
 package com.kotlinmessenger
 
 import android.app.Activity
-import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -9,13 +8,10 @@ import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
-import androidx.multidex.MultiDex
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import com.kotlinmessenger.feeds.FeedActivity
-import com.kotlinmessenger.messages.LatestMessagesActivity
+import com.kotlinmessenger.feeds.MainFeedActivity
 import com.kotlinmessenger.models.User
 import com.kotlinmessenger.registerLogin.LoginActivity
 //for using objects from activity_main
@@ -207,7 +203,7 @@ class RegisterActivity : AppCompatActivity() {
                    /* cancelProgressBar()*/
 
                     Log.d("RegisterActivity", "Finally we save the user to db")
-                    val intent = Intent(this, FeedActivity::class.java)
+                    val intent = Intent(this, MainFeedActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
 
                     startActivity(intent)

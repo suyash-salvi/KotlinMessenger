@@ -11,10 +11,13 @@ import com.kotlinmessenger.NewMessageActivity
 import com.kotlinmessenger.R
 import com.kotlinmessenger.RegisterActivity
 import com.kotlinmessenger.messages.LatestMessagesActivity
+import com.kotlinmessenger.models.User
+import com.xwray.groupie.GroupieViewHolder
+import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_feed.*
 import kotlinx.android.synthetic.main.activity_latest_messages.*
 
-class FeedActivity : AppCompatActivity() {
+class MainFeedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
@@ -58,4 +61,14 @@ class FeedActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
 
     }
+}
+class PostToItem(val text:String,val user: User): Item<GroupieViewHolder>(){
+    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
+
+    }
+
+    override fun getLayout(): Int {
+        return R.layout.feed_post_row
+    }
+
 }

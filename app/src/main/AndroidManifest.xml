@@ -19,7 +19,7 @@
             <!-- Adding meta data tag -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".feeds.FeedActivity" />
+                android:value=".feeds.MainFeedActivity" />
 
 
 
@@ -56,7 +56,7 @@
                 android:value=".messages.LatestMessagesActivity" />
         </activity> <!-- New Messages Activity -->
         <activity
-            android:name=".feeds.FeedActivity"
+            android:name=".feeds.MainFeedActivity"
             android:theme="@style/FeedbarTheme">
             <intent-filter>
 
@@ -73,7 +73,7 @@
             <!-- Adding meta data tag -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".feeds.FeedActivity" />
+                android:value=".feeds.MainFeedActivity" />
         </activity> <!-- Latest Messages Activity -->
         <activity android:name=".RegisterActivity">
             <intent-filter>

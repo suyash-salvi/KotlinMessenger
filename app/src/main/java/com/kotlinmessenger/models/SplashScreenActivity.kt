@@ -2,18 +2,11 @@ package com.kotlinmessenger.models
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.icu.number.NumberFormatter.with
-import android.icu.number.NumberRangeFormatter.with
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kotlinmessenger.NewMessageActivity
 import com.kotlinmessenger.R
-import com.kotlinmessenger.RegisterActivity
-import com.kotlinmessenger.feeds.FeedActivity
-import com.kotlinmessenger.messages.LatestMessagesActivity
-import com.squareup.picasso.Picasso
+import com.kotlinmessenger.feeds.MainFeedActivity
 import kotlinx.android.synthetic.main.activity_splash_screen.*
-import java.lang.System.load
 
 class SplashScreenActivity : AppCompatActivity() {
     @SuppressLint("ResourceType")
@@ -26,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
 
         splashScreen_Image.animate().setDuration(1500).alpha(1f).withEndAction {
-            val intent = Intent(this, FeedActivity::class.java)
+            val intent = Intent(this, MainFeedActivity::class.java)
             startActivity(intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
